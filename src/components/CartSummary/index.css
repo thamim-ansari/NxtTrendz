@@ -3,6 +3,11 @@
   flex-direction: column;
   align-self: flex-end;
 }
+@media screen and (max-width: 768px) {
+  .cart-summary-container {
+    width: 100%;
+  }
+}
 
 .order-total-value {
   color: #171f46;
@@ -58,17 +63,6 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 767px) {
-  .d-sm-none {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .d-lg-none {
-    display: none;
-  }
-}
 .popup-container {
   display: flex;
   flex-direction: column;
@@ -168,4 +162,7 @@
 }
 .conformation-btn {
   margin-top: 0px;
+}
+.cart-summary-content {
+  align-self: flex-end;
 }

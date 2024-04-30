@@ -97,6 +97,7 @@ const CartSummary = () => {
               type="button"
               className="checkout-button conformation-btn"
               onClick={onClickOrderConfirm}
+              disabled={paymentMethod !== 'Cash on Delivery'}
             >
               Confirm Order
             </button>
@@ -106,13 +107,14 @@ const CartSummary = () => {
         return (
           <>
             <div className="cart-summary-container">
-              <h1 className="order-total-value">
-                <span className="order-total-label">Order Total:</span> Rs{' '}
-                {total}
-                /-
-              </h1>
-              <p className="total-items">{cartList.length} Items in cart</p>
-
+              <div className="cart-summary-content">
+                <h1 className="order-total-value">
+                  <span className="order-total-label">Order Total:</span> Rs{' '}
+                  {total}
+                  /-
+                </h1>
+                <p className="total-items">{cartList.length} Items in cart</p>
+              </div>
               <Popup
                 modal
                 trigger={
@@ -124,16 +126,6 @@ const CartSummary = () => {
                 {closePopup => <>{renderPopupContainer(closePopup)}</>}
               </Popup>
             </div>
-            <Popup
-              modal
-              trigger={
-                <button type="button" className="checkout-button d-lg-none">
-                  Checkout
-                </button>
-              }
-            >
-              {closePopup => <>{renderPopupContainer(closePopup)}</>}
-            </Popup>
           </>
         )
       }}
